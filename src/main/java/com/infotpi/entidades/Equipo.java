@@ -7,10 +7,9 @@ public class Equipo {
     private String nombre;
     private List<Jugador> jugadores;
 
-    public Equipo (String nombre, List<Jugador> jugadores){
+    public Equipo (String nombre){
 
         this.nombre = nombre;
-        this.jugadores = jugadores;
     }
 
     public String getNombre(){
