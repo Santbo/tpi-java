@@ -4,5 +4,5 @@ import com.infotpi.entidades.Jugador;
 
 public interface RegistrarJugadorService {
     
-    Jugador registrar(String nombre, int edad, int cantidadGoles);
+    Jugador registrar(String nombre, int edad);
 }

@@ -20,7 +20,7 @@ public class Menu {
         System.out.println("[2] Menu Equipos");
         System.out.println("[3] Menu Partidos");
         System.out.println("[0] Salir");
-        System.out.println("Elija una opcion: ");
+        
     }
 
     public static void menuJugadores(){

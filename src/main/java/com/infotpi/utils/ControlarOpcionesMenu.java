@@ -1,20 +1,70 @@
 package com.infotpi.utils;
 
+import java.util.Scanner;
+
 public class ControlarOpcionesMenu {
+
     
-    public static boolean opcionesMenu(int opcion){
+    public static int convertirOpciones(){
+        
+        Scanner scanner = new Scanner(System.in);
+        do {
 
-            return opcion > Menu.OPCIONES_MENU || opcion < Menu.OPCION_SALIR;
+            try {
+                
+                System.out.println("Elija una opcion: ");
+                String opcion = scanner.nextLine(); 
+                int opciones = Integer.parseInt(opcion);
+
+                scanner.close();
+    
+                return opciones;
+            } catch (NumberFormatException e) {
+    
+                System.out.println("Error, opcion inválida. Intente nuevamente");
+            }
+        } while (Boolean.TRUE);
+
+        return -1;
+    }
+    
+    public static int opcionesMenu(){
+
+        int opcion = convertirOpciones();
+        while(opcion > Menu.OPCIONES_MENU || opcion < Menu.OPCION_SALIR) {
+
+            System.out.println("La opcion seleccionada es incorrecta. Elija una opcion válida");
+            opcion = convertirOpciones();
+        } 
+
+        return opcion;
 
     }
-    public static boolean opcionesMenuJugador(int opcion){
+    
+    public static int opcionesMenuJugador(){
 
-            return opcion > Menu.OPCIONES_JUGADORES || opcion < Menu.OPCION_SALIR;
+        
+        int opcion = convertirOpciones();
+        while(opcion > Menu.OPCIONES_JUGADORES || opcion < Menu.OPCION_SALIR) {
+
+            System.out.println("La opcion seleccionada es incorrecta. Elija una opcion válida");
+            opcion = convertirOpciones();
+        } 
+
+        return opcion;
 
     }
-    public static boolean opcionesMenuEquipo(int opcion){
+    public static int opcionesMenuEquipo(){
 
-            return opcion > Menu.OPCIONES_EQUIPOS || opcion < Menu.OPCION_SALIR;
+        
+        int opcion = convertirOpciones();
+        while(opcion > Menu.OPCIONES_EQUIPOS || opcion < Menu.OPCION_SALIR) {
+
+            System.out.println("La opcion seleccionada es incorrecta. Elija una opcion válida");
+            opcion = convertirOpciones();
+        } 
+
+        return opcion;
 
     }
 

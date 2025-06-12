@@ -4,9 +4,9 @@ public class Titular extends Jugador {
     
     private int minutosJugados = 0;
 
-    public Titular(String nombre, int edad, int cantidadGoles) {
+    public Titular(String nombre, int edad) {
 
-        super(nombre, edad, cantidadGoles);
+        super(nombre, edad);
 
 
     }

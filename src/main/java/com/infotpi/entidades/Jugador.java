@@ -6,11 +6,11 @@ public abstract class Jugador {
     protected int edad;
     protected int cantidadGoles;
 
-    public Jugador (String nombre, int edad, int cantidadGoles){
+    public Jugador (String nombre, int edad){
 
         this.nombre = nombre;
         this.edad = edad;
-        this.cantidadGoles = cantidadGoles;
+        this.cantidadGoles = 0;
     }
 
     public abstract void mostrarEstadistica();

@@ -7,9 +7,9 @@ import com.infotpi.services.interfaces.RegistrarJugadorService;
 public class RegistrarTitularServiceImp implements RegistrarJugadorService{
     
     @Override
-    public Jugador registrar(String nombre, int edad, int cantidadGoles){
+    public Jugador registrar(String nombre, int edad){
 
-        return new Titular(nombre, edad, cantidadGoles);
+        return new Titular(nombre, edad);
     }
 
 }

@@ -4,9 +4,9 @@ public class Suplente extends Jugador {
     
     private int partidosIngresadosDesdeBanco = 0;
 
-    public Suplente (String nombre, int edad, int cantidadGoles){
+    public Suplente (String nombre, int edad){
 
-        super(nombre, edad, cantidadGoles);
+        super(nombre, edad);
     }
 
     public String getNombre(){
