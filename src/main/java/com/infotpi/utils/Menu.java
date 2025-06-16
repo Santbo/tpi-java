@@ -29,7 +29,7 @@ public class Menu {
         System.out.println("[1] Registrar Jugador Titular");
         System.out.println("[2] Registrar Jugador Suplente");
         System.out.println("[0] Volver atras");
-        System.out.println("Elija una opcion: ");
+        
         
     }
     
@@ -39,7 +39,7 @@ public class Menu {
         System.out.println("[1] Registrar Equipo");
         System.out.println("[2] Incorporar Jugador a un Equipo");
         System.out.println("[0] Volver atras");
-        System.out.println("Elija una opcion: ");
+        
         
     }
 }

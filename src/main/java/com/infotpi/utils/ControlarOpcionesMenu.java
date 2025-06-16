@@ -2,21 +2,21 @@ package com.infotpi.utils;
 
 import java.util.Scanner;
 
+import static com.infotpi.utils.UtilsScanner.SCANNER;
+
 public class ControlarOpcionesMenu {
 
     
     public static int convertirOpciones(){
         
-        Scanner scanner = new Scanner(System.in);
         do {
 
             try {
                 
                 System.out.println("Elija una opcion: ");
-                String opcion = scanner.nextLine(); 
+                String opcion = SCANNER.nextLine(); 
                 int opciones = Integer.parseInt(opcion);
 
-                scanner.close();
     
                 return opciones;
             } catch (NumberFormatException e) {

@@ -9,6 +9,7 @@ public class IncorporarJugadorServiceImp implements IncorporarJugadorService{
     public void incorporar(Equipo equipo, Jugador jugador){
 
         equipo.setJugadores(jugador);
+        jugador.agregarAEquipo(equipo);
 
     }
 

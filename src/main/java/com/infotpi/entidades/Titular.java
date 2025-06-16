@@ -36,6 +36,11 @@ public class Titular extends Jugador {
         this.minutosJugados += minutosJugados;
     }
 
+    public void agregarAEquipo(Equipo equipo){
+
+        this.equipo = equipo;
+    }
+
     public void mostrarEstadistica(){
         
     }

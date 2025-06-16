@@ -1,6 +1,6 @@
 package com.infotpi.config;
 
-public class Config {
+public class Configuracion {
     
     public static int MAXIMO_JUGADORES = 10;
     public static int MAXIMO_EQUIPOS = 2;

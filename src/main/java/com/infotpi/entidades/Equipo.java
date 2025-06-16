@@ -1,11 +1,12 @@
 package com.infotpi.entidades;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Equipo {
     
     private String nombre;
-    private List<Jugador> jugadores;
+    private List<Jugador> jugadores = new ArrayList<>();
 
     public Equipo (String nombre){
 

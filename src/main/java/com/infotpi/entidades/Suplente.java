@@ -3,6 +3,7 @@ package com.infotpi.entidades;
 public class Suplente extends Jugador {
     
     private int partidosIngresadosDesdeBanco = 0;
+    private Equipo equipo;
 
     public Suplente (String nombre, int edad){
 
@@ -32,6 +33,11 @@ public class Suplente extends Jugador {
     public void setPartidosIngresadosDesdeBanco(int partidosIngresadosDesdeBanco){
 
         this.partidosIngresadosDesdeBanco += partidosIngresadosDesdeBanco;
+    }
+
+    public void agregarAEquipo(Equipo equipo){
+
+        this.equipo = equipo;
     }
 
     public void mostrarEstadistica(){

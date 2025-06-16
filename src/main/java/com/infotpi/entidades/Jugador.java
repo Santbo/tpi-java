@@ -5,6 +5,7 @@ public abstract class Jugador {
     protected String nombre;
     protected int edad;
     protected int cantidadGoles;
+    protected Equipo equipo;
 
     public Jugador (String nombre, int edad){
 
@@ -14,4 +15,20 @@ public abstract class Jugador {
     }
 
     public abstract void mostrarEstadistica();
+
+    public String getNombre(){
+
+        return this.nombre;
+    }
+
+    public Equipo getEquipo(){
+
+        return this.equipo;
+    }
+
+    public void agregarAEquipo(Equipo equipo){
+
+        this.equipo = equipo;
+    }
+
 }

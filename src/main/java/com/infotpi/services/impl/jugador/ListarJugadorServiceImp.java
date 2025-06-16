@@ -5,6 +5,9 @@ import com.infotpi.entidades.Jugador;
 import com.infotpi.entidades.Titular;
 import com.infotpi.data.RepositorioDeDatos;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public class ListarJugadorServiceImp implements ListarJugadorService{
@@ -18,24 +21,58 @@ public class ListarJugadorServiceImp implements ListarJugadorService{
         if (repositorioDeDatos.getJugadoresVacio()){
 
             System.out.println("No hay jugadores cargados.");
-        } else {
+            return Collections.emptyMap();
+        } 
 
-            for (Jugador jugador : repositorioDeDatos.getJugadores()){
-                
-                if (jugador instanceof Titular) {
+        for (Jugador jugador : repositorioDeDatos.getJugadores()){
+            
+            if (jugador instanceof Titular) {
 
-                    jugadores.put(jugador, "Titular");
-                } else {
+                jugadores.put(jugador, "Titular");
+            } else {
 
-                    jugadores.put(jugador, "Suplente");
-                }
+                jugadores.put(jugador, "Suplente");
             }
-
         }
+
+        
         
         return jugadores;
         
         
+    }
+
+    public List<Jugador> listarSinEquipo(RepositorioDeDatos repositorioDeDatos){
+
+        List<Jugador> jugadorSinEquipo = new ArrayList<>();
+
+        for (Jugador jugador : repositorioDeDatos.getJugadores()){
+
+            if (jugador.getEquipo() == null){
+
+                jugadorSinEquipo.add(jugador);
+            }
+
+        }
+
+        return jugadorSinEquipo;
+
+    }
+    public List<Jugador> listarConEquipo(RepositorioDeDatos repositorioDeDatos){
+
+        List<Jugador> jugadorConEquipo = new ArrayList<>();
+
+        for (Jugador jugador : repositorioDeDatos.getJugadores()){
+
+            if (jugador.getEquipo() != null){
+
+                jugadorConEquipo.add(jugador);
+            }
+
+        }
+
+        return jugadorConEquipo;
+
     }
     
 }
