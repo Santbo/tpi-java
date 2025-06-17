@@ -3,8 +3,8 @@ package com.infotpi.utils;
 public class Menu {
     
     static final int OPCIONES_MENU = 3;
-    static final int  OPCIONES_JUGADORES= 2;  
-    static final int OPCIONES_EQUIPOS = 2;  
+    static final int  OPCIONES_JUGADORES= 3;  
+    static final int OPCIONES_EQUIPOS = 3;  
     static final int OPCION_SALIR = 0;  
     
     public static void presentacion(){
@@ -28,6 +28,7 @@ public class Menu {
         System.out.println("=========================");
         System.out.println("[1] Registrar Jugador Titular");
         System.out.println("[2] Registrar Jugador Suplente");
+        System.out.println("[3] Listar todos los Jugadores");
         System.out.println("[0] Volver atras");
         
         
@@ -38,8 +39,24 @@ public class Menu {
         System.out.println("=========================");
         System.out.println("[1] Registrar Equipo");
         System.out.println("[2] Incorporar Jugador a un Equipo");
+        System.out.println("[3] Transferir Jugador");
         System.out.println("[0] Volver atras");
         
         
+    }
+
+    public static void menuPartidos(){
+
+        System.out.println("=========================");
+        System.out.println("[1] Crear partido");
+        System.out.println("[2] Promedio de goles de todos los equipos");
+        System.out.println("[0] Volver atras");
+    }
+
+    public static void partidoEnVivo(){
+
+        System.out.println("=========================");
+        System.out.println("[1] Meter gol");
+
     }
 }

@@ -7,12 +7,13 @@ import com.infotpi.data.RepositorioDeDatos;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ListarJugadorServiceImp implements ListarJugadorService{
     
-    private Map<Jugador, String> jugadores;
+    private Map<Jugador, String> jugadores = new HashMap<>();
     
 
     @Override

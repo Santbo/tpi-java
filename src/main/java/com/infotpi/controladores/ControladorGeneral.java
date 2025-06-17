@@ -10,6 +10,7 @@ public class ControladorGeneral {
 
         Controlador controladorEquipo = new ControladorEquipo();
         Controlador controladorJugador = new ControladorJugador();
+        Controlador controladorPartido = new ControladorPartido();
         int opcion;
         do {
             
@@ -23,6 +24,8 @@ public class ControladorGeneral {
                 case 2:
                     controladorEquipo.iniciar(repositorioDeDatos);
                     break;
+                
+                    
             }
         } while (opcion != 0);
     }

@@ -44,4 +44,9 @@ public class Suplente extends Jugador {
         
     }
 
+    public Equipo getEquipo(){
+
+        return this.equipo;
+    }
+
 }

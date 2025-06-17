@@ -14,7 +14,7 @@ public class RepositorioDeDatos {
 
     private List<Jugador> jugadores = new ArrayList<>();
     private List<Equipo> equipos = new ArrayList<>();
-    private List<Partido> partidos;
+    private List<Partido> partidos = new ArrayList<>();
 
     public void guardarJugador(Jugador jugador){
 
@@ -40,6 +40,10 @@ public class RepositorioDeDatos {
         {
             System.out.println("Error. Se alcanzó la cantidad máxima de equipos para crear");
         }
+    }
+
+    public void guardarPartidos(Partido partido){
+        
     }
 
     public List<Jugador> getJugadores(){

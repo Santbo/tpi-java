@@ -45,5 +45,10 @@ public class Titular extends Jugador {
         
     }
 
+    public Equipo getEquipo(){
+
+        return this.equipo;
+    }
+
 
 }
