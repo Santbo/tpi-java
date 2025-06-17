@@ -17,4 +17,14 @@ public class Resultado {
     public int getGolVisitante() {
         return golVisitante;
     }
+
+    public void setGolLocal(int gol){
+
+        this.golLocal += gol;
+    }
+
+    public void setGolVisitante(int gol){
+
+        this.golVisitante += gol;
+    }
 }

@@ -68,4 +68,38 @@ public class ControlarOpcionesMenu {
 
     }
 
+    public static int opcionesMenuPartido(){
+
+        int opcion = convertirOpciones();
+        while(opcion > Menu.OPCIONES_PARTIDO || opcion < Menu.OPCION_SALIR) {
+
+            System.out.println("La opcion seleccionada es incorrecta. Elija una opcion válida");
+            opcion = convertirOpciones();
+        } 
+
+        return opcion;
+    }
+
+    public static int opcionesMenuLiga(){
+        int opcion = convertirOpciones();
+        while(opcion > Menu.OPCIONES_LIGA || opcion < Menu.OPCION_SALIR) {
+
+            System.out.println("La opcion seleccionada es incorrecta. Elija una opcion válida");
+            opcion = convertirOpciones();
+        } 
+
+        return opcion;
+    }
+
+    public static int opcionMenuPartidoEnVivo(){
+        int opcion = convertirOpciones();
+        while(opcion > Menu.OPCIONES_PARTIDO_EN_VIVO || opcion < Menu.OPCION_SALIR) {
+
+            System.out.println("La opcion seleccionada es incorrecta. Elija una opcion válida");
+            opcion = convertirOpciones();
+        } 
+
+        return opcion;
+    }
+
 }

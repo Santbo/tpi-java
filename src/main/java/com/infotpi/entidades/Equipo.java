@@ -7,6 +7,7 @@ public class Equipo {
     
     private String nombre;
     private List<Jugador> jugadores = new ArrayList<>();
+    private int golesDelEquipo; 
 
     public Equipo (String nombre){
 
@@ -32,6 +33,16 @@ public class Equipo {
 
         int indiceJugador = jugadores.indexOf(jugador);
         jugadores.remove(indiceJugador);
+    }
+
+    public int getGolesDelEquipo(){
+
+        return this.golesDelEquipo;
+    }
+
+    public void setGolesDelEquipo(int goles){
+
+        this.golesDelEquipo += goles;
     }
     
 

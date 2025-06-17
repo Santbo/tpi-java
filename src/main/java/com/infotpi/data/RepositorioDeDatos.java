@@ -1,6 +1,7 @@
 package com.infotpi.data;
 
 import com.infotpi.entidades.Jugador;
+import com.infotpi.entidades.Liga;
 import com.infotpi.entidades.Equipo;
 import com.infotpi.entidades.Partido;
 
@@ -15,6 +16,7 @@ public class RepositorioDeDatos {
     private List<Jugador> jugadores = new ArrayList<>();
     private List<Equipo> equipos = new ArrayList<>();
     private List<Partido> partidos = new ArrayList<>();
+    private List<Liga> liga = new ArrayList<>();
 
     public void guardarJugador(Jugador jugador){
 
@@ -46,6 +48,18 @@ public class RepositorioDeDatos {
         
     }
 
+    public void guardarLiga(Liga liga){
+        if (this.liga == null || 
+        this.liga.size() < Configuracion.MAXIMO_LIGAS) {
+
+            this.liga.add(liga);
+        }
+        else 
+        {
+            System.out.println("Error. Se alcanzó la cantidad máxima de ligas para crear");
+        }
+    }
+
     public List<Jugador> getJugadores(){
 
         return this.jugadores;
@@ -54,6 +68,11 @@ public class RepositorioDeDatos {
     public List<Equipo> getEquipo(){
 
         return this.equipos;
+    }
+
+    public List<Liga> getLiga(){
+
+        return this.liga;
     }
 
     public boolean getEquipoVacio(){

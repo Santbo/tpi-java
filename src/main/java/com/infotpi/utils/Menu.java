@@ -5,7 +5,10 @@ public class Menu {
     static final int OPCIONES_MENU = 3;
     static final int  OPCIONES_JUGADORES= 3;  
     static final int OPCIONES_EQUIPOS = 3;  
-    static final int OPCION_SALIR = 0;  
+    static final int OPCION_SALIR = 0;
+    static final int OPCIONES_PARTIDO = 2;
+    static final int OPCIONES_PARTIDO_EN_VIVO = 2;  
+    static final int OPCIONES_LIGA = 2;  
     
     public static void presentacion(){
 
@@ -56,7 +59,16 @@ public class Menu {
     public static void partidoEnVivo(){
 
         System.out.println("=========================");
-        System.out.println("[1] Meter gol");
+        System.out.println("[1] Meter Gol");
+        System.out.println("[2] Terminar Partido 0 - 0");
+        System.out.println("[0] Cancelar Partido");
 
+    }
+
+    public static void menuLiga(){
+        System.out.println("=========================");
+        System.out.println("[1] Crear Liga");
+        System.out.println("[2] Goleador de Liga");
+        
     }
 }

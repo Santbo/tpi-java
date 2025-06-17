@@ -1,6 +1,7 @@
 package com.infotpi.services.impl.jugador;
 
 import com.infotpi.services.interfaces.ListarJugadorService;
+import com.infotpi.entidades.Equipo;
 import com.infotpi.entidades.Jugador;
 import com.infotpi.entidades.Titular;
 import com.infotpi.data.RepositorioDeDatos;
@@ -59,6 +60,7 @@ public class ListarJugadorServiceImp implements ListarJugadorService{
         return jugadorSinEquipo;
 
     }
+
     public List<Jugador> listarConEquipo(RepositorioDeDatos repositorioDeDatos){
 
         List<Jugador> jugadorConEquipo = new ArrayList<>();

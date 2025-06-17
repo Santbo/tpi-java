@@ -16,6 +16,7 @@ import com.infotpi.services.impl.equipo.IncorporarJugadorServiceImp;
 import com.infotpi.services.impl.equipo.ListarEquipoServiceImp;
 import com.infotpi.services.impl.equipo.TransferirJugadorServiceImp;
 import com.infotpi.services.impl.jugador.ListarJugadorServiceImp;
+import com.infotpi.utils.ControlarEntradaDatos;
 import com.infotpi.utils.ControlarOpcionesMenu;
 import com.infotpi.utils.Menu;
 import static com.infotpi.utils.UtilsScanner.SCANNER;
@@ -74,25 +75,9 @@ public class ControladorEquipo extends Controlador{
                     }
 
                     int opcionEquipo = 0;
-                    String scan;
 
-                    while(Boolean.TRUE){
-
-                        System.out.println("Elije un equipo: ");
-
-                        
-                        scan = SCANNER.nextLine();
-                        opcionEquipo = Integer.parseInt((scan.isEmpty())? "-1" : scan );
-                        
-                        if (opcionEquipo < 0 || opcionEquipo >= equipos.size()) {
-    
-                            System.out.println("Error al elegir un equipo. Intente nuevamente.");
-                        }
-                        else {
-                            break;
-                        }
-
-                    }
+                    System.out.println("Elije un equipo: ");
+                    opcionEquipo = ControlarEntradaDatos.controlarEntradaDeDatos(equipos.size());
 
                     if (equipos.get(opcionEquipo).getJugadores() != null &&
                     equipos.get(opcionEquipo).getJugadores().size() >= Configuracion.MAXIMO_JUGADORES_X_EQUIPO){
@@ -119,18 +104,58 @@ public class ControladorEquipo extends Controlador{
 
                     int opcionJugador = 0;
 
+                    System.out.println("Elije un jugador: ");
+                    
+                    opcionJugador = ControlarEntradaDatos.controlarEntradaDeDatos(listarJugadores.listarSinEquipo(repositorioDeDatos).size());
+
+
+                    incorporarJugador.incorporar(equipos.get(opcionEquipo), listarJugadores.listarSinEquipo(repositorioDeDatos).get(opcionJugador));
+
+                    break;
+
+                case 3:
+
+                    if (repositorioDeDatos.getEquipoVacio() || repositorioDeDatos.getJugadoresVacio()){
+
+                        System.out.println("Primero debe crear Jugadores o Equipos");
+                        continue;
+                    } 
+
+                    
+                    List<Jugador> jugadoresConEquipo = listarJugadores.listarConEquipo(repositorioDeDatos);
+                    indice = 0;
+                    opcionJugador = 0;
+                    opcionEquipo = 0;
+                    
+                    System.out.println("Elija al jugador que desea transferir");
+
+                    for (Jugador jugador : jugadoresConEquipo){
+
+                        System.out.printf("[%d] Jugador: %s - Equipo: %s\n", indice, jugador.getNombre(), jugador.getEquipo().getNombre());
+                        indice++;
+                    }
+                    
+                    opcionJugador = ControlarEntradaDatos.controlarEntradaDeDatos(jugadoresConEquipo.size());
+
+
+                    System.out.println("Elije a que equipo transferir el jugador: ");
+
+                    indice = 0;
+                    for (Equipo equipo : equipos){
+                        
+                        System.out.printf("[%d] %s\n", indice, equipo.getNombre());
+                        indice++;
+                    }
+
+                    
+                    System.out.println("Elije un Equipo: ");
+                    
                     while(Boolean.TRUE){
 
-                        
+                        opcionEquipo = ControlarEntradaDatos.controlarEntradaDeDatos(equipos.size());
+                        if (equipos.get(opcionEquipo) == jugadoresConEquipo.get(opcionJugador).getEquipo()){
 
-                        System.out.println("Elije un jugador: ");
-
-                        scan = SCANNER.nextLine();
-                        opcionJugador = Integer.parseInt((scan.isEmpty())? "-1" : scan );
-                        
-                        if (opcionJugador < 0 || opcionJugador >= listarJugadores.listarSinEquipo(repositorioDeDatos).size()) {
-    
-                            System.out.println("Error al elegir un jugador. Intente nuevamente.");
+                            System.out.println("Error. No se puede transferir al jugador al mismo equipo. Intente nuevamente.");
                         }
                         else {
                             break;
@@ -138,91 +163,19 @@ public class ControladorEquipo extends Controlador{
 
                     }
 
+                    
 
-                    incorporarJugador.incorporar(equipos.get(opcionEquipo), listarJugadores.listarSinEquipo(repositorioDeDatos).get(opcionJugador));
+
+                    transferirJugador.transferir(jugadoresConEquipo.get(opcionJugador).getEquipo(), 
+                                                equipos.get(opcionEquipo),
+                                                jugadoresConEquipo.get(opcionJugador));
 
                     break;
-
-                    case 3:
-
-                        if (repositorioDeDatos.getEquipoVacio() || repositorioDeDatos.getJugadoresVacio()){
-
-                            System.out.println("Primero debe crear Jugadores o Equipos");
-                            continue;
-                        } 
-
-                        System.out.println("Elija al jugador que desea transferir");
-
-                        List<Jugador> jugadoresConEquipo = listarJugadores.listarConEquipo(repositorioDeDatos);
-                        indice = 0;
-                        opcionJugador = 0;
-                        opcionEquipo = 0;
-
-                        for (Jugador jugador : jugadoresConEquipo){
-
-                            System.out.printf("[%d] Jugador: %s - Equipo: %s\n", indice, jugador.getNombre(), jugador.getEquipo().getNombre());
-                            indice++;
-                        }
-                        
-                        while(Boolean.TRUE){
-
-                            System.out.println("Elije un jugador: ");
-
-                            scan = SCANNER.nextLine();
-                            opcionJugador = Integer.parseInt((scan.isEmpty())? "-1" : scan );
-                            
-                            if (opcionJugador < 0 || opcionJugador >= jugadoresConEquipo.size()) {
-        
-                                System.out.println("Error al elegir un jugador. Intente nuevamente.");
-                            }
-                            else {
-                                break;
-                            }
-
-                        }
-
-                        System.out.println("Elije a que equipo transferir el jugador: ");
-
-                        indice = 0;
-                        for (Equipo equipo : equipos){
-                            
-                            System.out.printf("[%d] %s\n", indice, equipo.getNombre());
-                            indice++;
-                        }
-
-                        while(Boolean.TRUE){
-
-                            System.out.println("Elije un Equipo: ");
-
-                            scan = SCANNER.nextLine();
-                            opcionEquipo = Integer.parseInt((scan.isEmpty())? "-1" : scan );
-                            
-                            if (opcionEquipo < 0 || opcionEquipo >= equipos.size()) {
-        
-                                System.out.println("Error al elegir un equipo. Intente nuevamente.");
-                            } else if (equipos.get(opcionEquipo) == jugadoresConEquipo.get(opcionJugador).getEquipo()){
-
-                                System.out.println("Error. No se puede transferir al jugador al mismo equipo. Intente nuevamente.");
-                            }
-                            else {
-                                break;
-                            }
-
-                        }
-
-                        
-
-
-                        transferirJugador.transferir(jugadoresConEquipo.get(opcionJugador).getEquipo(), 
-                                                    equipos.get(opcionEquipo),
-                                                    jugadoresConEquipo.get(opcionJugador));
-
-                        break;
-
-
-
-
             }
+
+
+
+            
         
 
         } while(this.opcion != 0);
