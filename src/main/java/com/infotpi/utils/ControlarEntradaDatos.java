@@ -21,7 +21,7 @@ public class ControlarEntradaDatos {
                 continue;
             }
 
-            return opcion;
+            break;
         }
 
         return opcion;

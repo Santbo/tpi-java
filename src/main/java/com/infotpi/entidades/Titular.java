@@ -2,7 +2,7 @@ package com.infotpi.entidades;
 
 public class Titular extends Jugador {
     
-    private int minutosJugados = 0;
+    private int partidosJugados = 0;
 
     public Titular(String nombre, int edad) {
 
@@ -16,9 +16,9 @@ public class Titular extends Jugador {
         return this.nombre;
     }
 
-    public int getMinutosJugados(){
+    public int getPartidosJugados(){
 
-        return this.minutosJugados;
+        return this.partidosJugados;
     }
 
     public int getCantidadGoles(){
@@ -31,9 +31,9 @@ public class Titular extends Jugador {
         this.cantidadGoles += golesAnotados;
     }
 
-    public void setMinutosJugados(int minutosJugados){
+    public void setPartidosJugados(int partidosJugados){
 
-        this.minutosJugados += minutosJugados;
+        this.partidosJugados += partidosJugados;
     }
 
     public void agregarAEquipo(Equipo equipo){

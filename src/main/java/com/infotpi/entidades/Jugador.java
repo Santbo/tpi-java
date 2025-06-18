@@ -5,6 +5,7 @@ public abstract class Jugador {
     protected String nombre;
     protected int edad;
     protected int cantidadGoles;
+    protected int partidosJugados;
     protected Equipo equipo;
 
     public Jugador (String nombre, int edad){
@@ -29,6 +30,11 @@ public abstract class Jugador {
     public void agregarAEquipo(Equipo equipo){
 
         this.equipo = equipo;
+    }
+
+    public void setPartidosJugados(int partidosJugados){
+        
+        this.partidosJugados += partidosJugados;
     }
 
 }

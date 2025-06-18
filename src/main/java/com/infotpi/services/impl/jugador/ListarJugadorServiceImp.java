@@ -1,7 +1,6 @@
 package com.infotpi.services.impl.jugador;
 
 import com.infotpi.services.interfaces.ListarJugadorService;
-import com.infotpi.entidades.Equipo;
 import com.infotpi.entidades.Jugador;
 import com.infotpi.entidades.Titular;
 import com.infotpi.data.RepositorioDeDatos;

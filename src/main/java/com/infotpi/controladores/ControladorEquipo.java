@@ -123,6 +123,13 @@ public class ControladorEquipo extends Controlador{
 
                     
                     List<Jugador> jugadoresConEquipo = listarJugadores.listarConEquipo(repositorioDeDatos);
+
+                    if (jugadoresConEquipo.isEmpty()){
+
+                        System.out.println("Error. No hay jugadores en ningun equipo.");
+                        break;
+                    }
+
                     indice = 0;
                     opcionJugador = 0;
                     opcionEquipo = 0;
@@ -146,9 +153,6 @@ public class ControladorEquipo extends Controlador{
                         System.out.printf("[%d] %s\n", indice, equipo.getNombre());
                         indice++;
                     }
-
-                    
-                    System.out.println("Elije un Equipo: ");
                     
                     while(Boolean.TRUE){
 
@@ -163,19 +167,12 @@ public class ControladorEquipo extends Controlador{
 
                     }
 
-                    
-
-
                     transferirJugador.transferir(jugadoresConEquipo.get(opcionJugador).getEquipo(), 
                                                 equipos.get(opcionEquipo),
                                                 jugadoresConEquipo.get(opcionJugador));
 
                     break;
-            }
-
-
-
-            
+            }   
         
 
         } while(this.opcion != 0);

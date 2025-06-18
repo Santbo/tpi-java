@@ -1,18 +1,17 @@
 package com.infotpi.entidades;
 import java.util.Map;
-import java.util.List;
 
 public class Partido {
     
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
     private Resultado resultado;
-    private Map<Jugador, List<Goles>> golesPorJugador;
+    private Map<Jugador, Integer> golesPorJugador;
 
     public Partido(Equipo equipoLocal, 
                     Equipo equipoVisitante, 
                     Resultado resultado, 
-                    Map<Jugador, List<Goles>> golesPorJugador){
+                    Map<Jugador, Integer> golesPorJugador){
 
         
         this.equipoLocal = equipoLocal;
@@ -31,7 +30,7 @@ public class Partido {
         return this.resultado;
     }
 
-    public Map<Jugador, List<Goles>> getGoles(){
+    public Map<Jugador, Integer> getGoles(){
 
         return this.golesPorJugador;
     }

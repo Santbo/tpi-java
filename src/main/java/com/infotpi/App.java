@@ -4,10 +4,7 @@ import com.infotpi.controladores.ControladorGeneral;
 import com.infotpi.data.RepositorioDeDatos;
 import com.infotpi.utils.Menu;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args )

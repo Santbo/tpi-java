@@ -1,10 +1,8 @@
 package com.infotpi.services.impl.partido;
 
-import java.util.List;
 import java.util.Map;
 
 import com.infotpi.entidades.Equipo;
-import com.infotpi.entidades.Goles;
 import com.infotpi.entidades.Jugador;
 import com.infotpi.entidades.Partido;
 import com.infotpi.entidades.Resultado;
@@ -16,7 +14,7 @@ public class CrearPartidoServiceImp implements CrearPartidoService{
     public Partido crear(Equipo equipoLocal, 
                         Equipo equipoVisitante, 
                         Resultado resultado, 
-                        Map<Jugador, List<Goles>> golesPorJugador){
+                        Map<Jugador, Integer> golesPorJugador){
         
         return new Partido(equipoLocal, equipoVisitante, resultado, golesPorJugador);
     }

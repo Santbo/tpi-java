@@ -2,12 +2,12 @@ package com.infotpi.utils;
 
 public class Menu {
     
-    static final int OPCIONES_MENU = 3;
+    static final int OPCIONES_MENU = 4;
     static final int  OPCIONES_JUGADORES= 3;  
     static final int OPCIONES_EQUIPOS = 3;  
     static final int OPCION_SALIR = 0;
     static final int OPCIONES_PARTIDO = 2;
-    static final int OPCIONES_PARTIDO_EN_VIVO = 2;  
+    static final int OPCIONES_PARTIDO_EN_VIVO = 3;  
     static final int OPCIONES_LIGA = 2;  
     
     public static void presentacion(){
@@ -22,6 +22,7 @@ public class Menu {
         System.out.println("[1] Menu Jugadores");
         System.out.println("[2] Menu Equipos");
         System.out.println("[3] Menu Partidos");
+        System.out.println("[4] Menu Liga");
         System.out.println("[0] Salir");
         
     }
@@ -61,6 +62,7 @@ public class Menu {
         System.out.println("=========================");
         System.out.println("[1] Meter Gol");
         System.out.println("[2] Terminar Partido 0 - 0");
+        System.out.println("[3] Finalizar Partido");
         System.out.println("[0] Cancelar Partido");
 
     }
@@ -69,6 +71,7 @@ public class Menu {
         System.out.println("=========================");
         System.out.println("[1] Crear Liga");
         System.out.println("[2] Goleador de Liga");
+        System.out.println("[0] Volver atras");
         
     }
 }

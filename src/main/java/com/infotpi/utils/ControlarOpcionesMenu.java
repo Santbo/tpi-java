@@ -1,7 +1,5 @@
 package com.infotpi.utils;
 
-import java.util.Scanner;
-
 import static com.infotpi.utils.UtilsScanner.SCANNER;
 
 public class ControlarOpcionesMenu {

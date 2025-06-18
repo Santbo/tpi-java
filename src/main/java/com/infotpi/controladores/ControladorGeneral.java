@@ -11,11 +11,12 @@ public class ControladorGeneral {
         Controlador controladorEquipo = new ControladorEquipo();
         Controlador controladorJugador = new ControladorJugador();
         Controlador controladorPartido = new ControladorPartido();
+        Controlador controladorLiga = new ControladorLiga();
         int opcion;
         do {
             
             Menu.menu();
-            opcion = ControlarOpcionesMenu.opcionesMenuJugador();
+            opcion = ControlarOpcionesMenu.opcionesMenu();
             
             switch(opcion){
                 case 1: 
@@ -23,6 +24,12 @@ public class ControladorGeneral {
                     break;
                 case 2:
                     controladorEquipo.iniciar(repositorioDeDatos);
+                    break;
+                case 3:
+                    controladorPartido.iniciar(repositorioDeDatos);
+                    break;
+                case 4:
+                    controladorLiga.iniciar(repositorioDeDatos);
                     break;
                 
                     

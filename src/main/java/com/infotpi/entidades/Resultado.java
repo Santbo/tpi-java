@@ -27,4 +27,15 @@ public class Resultado {
 
         this.golVisitante += gol;
     }
+
+    public void setEsEmpate(){
+
+        if (this.golLocal == this.golVisitante){
+
+            this.esEmpate = true;
+        } else {
+
+            System.out.println("Error. No se puede empatar ya que los resultados son distintos.");
+        }
+    }
 }
