@@ -6,6 +6,7 @@ import com.infotpi.services.interfaces.CrearEquipoService;
 import com.infotpi.services.interfaces.IncorporarJugadorService;
 import com.infotpi.services.interfaces.ListarEquipoService;
 import com.infotpi.services.interfaces.ListarJugadorService;
+import com.infotpi.services.interfaces.RankingEquiposXGolService;
 import com.infotpi.services.interfaces.TransferirJugadorService;
 import com.infotpi.config.Configuracion;
 import com.infotpi.data.RepositorioDeDatos;
@@ -14,11 +15,14 @@ import com.infotpi.entidades.Jugador;
 import com.infotpi.services.impl.equipo.CrearEquipoServiceImp;
 import com.infotpi.services.impl.equipo.IncorporarJugadorServiceImp;
 import com.infotpi.services.impl.equipo.ListarEquipoServiceImp;
+import com.infotpi.services.impl.equipo.RankingEquiposXGolServiceImp;
 import com.infotpi.services.impl.equipo.TransferirJugadorServiceImp;
 import com.infotpi.services.impl.jugador.ListarJugadorServiceImp;
 import com.infotpi.utils.ControlarEntradaDatos;
 import com.infotpi.utils.ControlarOpcionesMenu;
 import com.infotpi.utils.Menu;
+import com.infotpi.utils.MostrarRankingEquipo;
+
 import static com.infotpi.utils.UtilsScanner.SCANNER;
 
 public class ControladorEquipo extends Controlador{
@@ -29,6 +33,7 @@ public class ControladorEquipo extends Controlador{
     private ListarEquipoService listarEquipo = new ListarEquipoServiceImp();
     private ListarJugadorService listarJugadores = new ListarJugadorServiceImp();
     private TransferirJugadorService transferirJugador = new TransferirJugadorServiceImp();
+    private RankingEquiposXGolService rankingEquipos = new RankingEquiposXGolServiceImp();
     
     public  void iniciar(RepositorioDeDatos repositorioDeDatos){
 
@@ -172,6 +177,17 @@ public class ControladorEquipo extends Controlador{
                                                 jugadoresConEquipo.get(opcionJugador));
 
                     break;
+                
+                case 4:
+                    
+                    if(repositorioDeDatos.getEquipoVacio()){
+                        System.out.println("Primero debe crear equipos.");
+
+                    }
+
+                    MostrarRankingEquipo.mostrar(rankingEquipos.obtenerRankingEquipo(repositorioDeDatos));
+
+
             }   
         
 

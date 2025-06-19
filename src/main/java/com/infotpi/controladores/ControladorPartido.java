@@ -114,7 +114,7 @@ public class ControladorPartido extends Controlador{
                         indice++;
                     }
 
-                    System.out.printf("El promedio de goles de todos los equipos es de: .2%f goles \n", acumularGoles / indice);
+                    System.out.printf("El promedio de goles de todos los equipos es de: %.2f goles \n", acumularGoles / indice);
                     break;
             }
         } while (this.opcion != 0);

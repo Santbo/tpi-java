@@ -2,13 +2,16 @@ package com.infotpi.controladores;
 
 import com.infotpi.services.interfaces.ListarJugadorService;
 import com.infotpi.services.interfaces.RegistrarJugadorService;
+import com.infotpi.services.interfaces.SuplentesSinPartidosService;
 import com.infotpi.services.impl.jugador.RegistrarTitularServiceImp;
+import com.infotpi.services.impl.jugador.SuplentesSinPartidosServiceImp;
 import com.infotpi.data.RepositorioDeDatos;
 import com.infotpi.services.impl.jugador.ListarJugadorServiceImp;
 import com.infotpi.services.impl.jugador.RegistrarSuplenteServiceImp;
 import com.infotpi.utils.ControlarNumeros;
 import com.infotpi.utils.ControlarOpcionesMenu;
 import com.infotpi.utils.ListarJugadores;
+import com.infotpi.utils.ListarSuplenteSinPartidos;
 import com.infotpi.config.Configuracion;
 import com.infotpi.utils.Menu;
 
@@ -20,6 +23,7 @@ public class ControladorJugador extends Controlador{
     private RegistrarJugadorService registrarJugadorTitular = new RegistrarTitularServiceImp();
     private RegistrarJugadorService registrarJugadorSuplente = new RegistrarSuplenteServiceImp();
     private ListarJugadorService listarJugadores = new ListarJugadorServiceImp();
+    private SuplentesSinPartidosService listarSuplentesSinPartidos = new SuplentesSinPartidosServiceImp();
     
     
     public void iniciar(RepositorioDeDatos repositorioDeDatos){
@@ -88,6 +92,17 @@ public class ControladorJugador extends Controlador{
                 case 3:
                     
                     ListarJugadores.ListarTodosLosJugadores(listarJugadores.listar(repositorioDeDatos));
+                    break;
+
+                case 4:
+                    
+                    if (repositorioDeDatos.getJugadoresVacio()){
+
+                        System.out.println("Primero debe agregar jugadores.");
+                    }
+
+                    ListarSuplenteSinPartidos.listar(listarSuplentesSinPartidos.suplenteSinPartidos(listarJugadores.listar(repositorioDeDatos)));
+                    
                     break;
                     
 

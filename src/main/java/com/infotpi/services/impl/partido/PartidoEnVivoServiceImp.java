@@ -59,6 +59,7 @@ public class PartidoEnVivoServiceImp implements PartidoEnVivoService{
                     resultadoPartido.setEsEmpate();
 
                     liga.setPartidos(crearPartido.crear(equipoLocal, equipoVisitante, resultadoPartido, golesPorJugador));
+                    this.opcion = 0;
                     break;
     
                 case 3:

@@ -28,7 +28,7 @@ public class GolAnotadoServiceImp implements GolAnotadoService{
 
         equiposEnfrentados.forEach((jugador, equipo)-> {
 
-            System.out.printf("[%d] %s - Pertenece a: %s\n", indice, jugador.getNombre(), equipo.getNombre());
+            System.out.printf("[%d] %s - Pertenece a: %s\n", indice[0], jugador.getNombre(), equipo.getNombre());
             indice[0]++;
 
         });

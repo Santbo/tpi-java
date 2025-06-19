@@ -37,4 +37,9 @@ public abstract class Jugador {
         this.partidosJugados += partidosJugados;
     }
 
+    public int getPartidosJugados(){
+
+        return this.partidosJugados;
+    }
+
 }
