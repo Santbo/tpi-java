@@ -6,6 +6,7 @@ public abstract class Jugador {
     protected int edad;
     protected int cantidadGoles;
     protected int partidosJugados;
+    protected int golesHistoricos;
     protected Equipo equipo;
 
     public Jugador (String nombre, int edad){
@@ -40,6 +41,16 @@ public abstract class Jugador {
     public int getPartidosJugados(){
 
         return this.partidosJugados;
+    }
+
+    public void setGolesHistoricos(int golesHistoricos){
+        
+        this.golesHistoricos += golesHistoricos;
+    }
+
+    public int getGolesHistoricos(){
+
+        return this.golesHistoricos;
     }
 
 }

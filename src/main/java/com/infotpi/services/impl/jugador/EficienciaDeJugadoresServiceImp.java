@@ -1,0 +1,29 @@
+package com.infotpi.services.impl.jugador;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.infotpi.entidades.Jugador;
+import com.infotpi.services.interfaces.EficienciaDeJugadoresService;
+
+public class EficienciaDeJugadoresServiceImp implements EficienciaDeJugadoresService{
+    
+    public Map<Jugador, Double> mostrar(Map<Jugador, String> jugadores){
+
+
+        Map<Jugador, Double> eficienciaJugadores = new HashMap<>();
+
+        jugadores.forEach((jugador, tipo)->{
+
+            if (jugador.getPartidosJugados() != 0){
+
+                eficienciaJugadores.put(jugador, Double.valueOf(jugador.getGolesHistoricos() / jugador.getPartidosJugados()));
+
+            }
+
+        });
+
+        return eficienciaJugadores;
+
+    }
+}

@@ -39,6 +39,7 @@ public class GolAnotadoServiceImp implements GolAnotadoService{
         meterGol.meterGol(seleccionarJugadorEquipo.get(opcion).getValue(), seleccionarJugadorEquipo.get(opcion).getKey());
 
         seleccionarJugadorEquipo.get(opcion).getValue().setGolesDelEquipo(1);
+        seleccionarJugadorEquipo.get(opcion).getKey().setGolesHistoricos(1); 
 
         golesPorJugador.put(seleccionarJugadorEquipo.get(opcion).getKey(), 1);
 

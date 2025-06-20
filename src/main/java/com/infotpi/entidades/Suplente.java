@@ -3,6 +3,7 @@ package com.infotpi.entidades;
 public class Suplente extends Jugador {
     
     private int partidosJugados = 0;
+    private int golesHistoricos = 0;
     private Equipo equipo;
 
     public Suplente (String nombre, int edad){
@@ -47,6 +48,16 @@ public class Suplente extends Jugador {
     public Equipo getEquipo(){
 
         return this.equipo;
+    }
+
+    public void setGolesHistoricos(int golesHistoricos){
+
+        this.golesHistoricos += golesHistoricos;
+    }
+
+    public int getGolesHistoricos(){
+
+        return this.golesHistoricos;
     }
 
 }

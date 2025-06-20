@@ -1,19 +1,25 @@
 package com.infotpi.controladores;
 
+import com.infotpi.services.interfaces.EficienciaDeJugadoresService;
 import com.infotpi.services.interfaces.ListarJugadorService;
 import com.infotpi.services.interfaces.RegistrarJugadorService;
 import com.infotpi.services.interfaces.SuplentesSinPartidosService;
+import com.infotpi.services.interfaces.TitularConMasPartidosService;
 import com.infotpi.services.impl.jugador.RegistrarTitularServiceImp;
 import com.infotpi.services.impl.jugador.SuplentesSinPartidosServiceImp;
+import com.infotpi.services.impl.jugador.TitularConMasPartidoServiceImp;
 import com.infotpi.data.RepositorioDeDatos;
+import com.infotpi.services.impl.jugador.EficienciaDeJugadoresServiceImp;
 import com.infotpi.services.impl.jugador.ListarJugadorServiceImp;
 import com.infotpi.services.impl.jugador.RegistrarSuplenteServiceImp;
 import com.infotpi.utils.ControlarNumeros;
 import com.infotpi.utils.ControlarOpcionesMenu;
+import com.infotpi.utils.EficienciaDeJugadores;
 import com.infotpi.utils.ListarJugadores;
 import com.infotpi.utils.ListarSuplenteSinPartidos;
 import com.infotpi.config.Configuracion;
 import com.infotpi.utils.Menu;
+import com.infotpi.utils.TitularConMasPartidos;
 
 import static com.infotpi.utils.UtilsScanner.SCANNER;
 
@@ -24,6 +30,8 @@ public class ControladorJugador extends Controlador{
     private RegistrarJugadorService registrarJugadorSuplente = new RegistrarSuplenteServiceImp();
     private ListarJugadorService listarJugadores = new ListarJugadorServiceImp();
     private SuplentesSinPartidosService listarSuplentesSinPartidos = new SuplentesSinPartidosServiceImp();
+    private TitularConMasPartidosService titularConMasPartidos = new TitularConMasPartidoServiceImp();
+    private EficienciaDeJugadoresService eficienciaDejugador = new EficienciaDeJugadoresServiceImp();
     
     
     public void iniciar(RepositorioDeDatos repositorioDeDatos){
@@ -104,6 +112,33 @@ public class ControladorJugador extends Controlador{
                     ListarSuplenteSinPartidos.listar(listarSuplentesSinPartidos.suplenteSinPartidos(listarJugadores.listar(repositorioDeDatos)));
                     
                     break;
+
+                case 5:
+
+                    if (repositorioDeDatos.getJugadoresVacio()){
+
+                        System.out.println("Primero debe agregar jugadores.");
+                        break;
+                    } 
+
+                    TitularConMasPartidos.mostrar(titularConMasPartidos.obtener(listarJugadores.listar(repositorioDeDatos)));
+
+                    break;
+
+                case 6:
+
+                    if (repositorioDeDatos.getJugadoresVacio()){
+
+                        System.out.println("Primero debe agregar jugadores.");
+                        break;
+                    }
+                    
+                    EficienciaDeJugadores.obtener(eficienciaDejugador.mostrar(listarJugadores.listar(repositorioDeDatos)));
+                    break;
+                    
+
+                    
+                    
                     
 
             }

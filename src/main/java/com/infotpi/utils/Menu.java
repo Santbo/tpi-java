@@ -3,7 +3,7 @@ package com.infotpi.utils;
 public class Menu {
     
     static final int OPCIONES_MENU = 4;
-    static final int  OPCIONES_JUGADORES= 4;  
+    static final int  OPCIONES_JUGADORES= 6;  
     static final int OPCIONES_EQUIPOS = 4;  
     static final int OPCION_SALIR = 0;
     static final int OPCIONES_PARTIDO = 2;
@@ -34,6 +34,8 @@ public class Menu {
         System.out.println("[2] Registrar Jugador Suplente");
         System.out.println("[3] Listar todos los Jugadores");
         System.out.println("[4] Listar Suplentes que no ingresaron a partidos");
+        System.out.println("[5] Obtener el jugador con mas partidos ingresados");
+        System.out.println("[6] Calculo de eficiencia de cada jugador");
         System.out.println("[0] Volver atras");
         
         
