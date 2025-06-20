@@ -3,6 +3,7 @@ package com.infotpi.services.impl.jugador;
 import java.util.HashMap;
 import java.util.Map;
 
+
 import com.infotpi.entidades.Jugador;
 import com.infotpi.services.interfaces.EficienciaDeJugadoresService;
 
@@ -26,5 +27,17 @@ public class EficienciaDeJugadoresServiceImp implements EficienciaDeJugadoresSer
 
         return eficienciaJugadores;
 
+    }
+
+    @Override
+    public Jugador jugadorMasEficiente(Map<Jugador, Integer> golesPorJugador){
+
+        Jugador maximoGoleadorLiga = golesPorJugador.entrySet()
+                                                    .stream()
+                                                    .max(Map.Entry.comparingByValue())
+                                                    .get()
+                                                    .getKey();
+
+        return maximoGoleadorLiga;
     }
 }

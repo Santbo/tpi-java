@@ -8,7 +8,7 @@ public class Menu {
     static final int OPCION_SALIR = 0;
     static final int OPCIONES_PARTIDO = 2;
     static final int OPCIONES_PARTIDO_EN_VIVO = 3;  
-    static final int OPCIONES_LIGA = 2;  
+    static final int OPCIONES_LIGA = 3;  
     
     public static void presentacion(){
 
@@ -76,6 +76,7 @@ public class Menu {
         System.out.println("=========================");
         System.out.println("[1] Crear Liga");
         System.out.println("[2] Goleador de Liga");
+        System.out.println("[3] Reporte de Liga");
         System.out.println("[0] Volver atras");
         
     }

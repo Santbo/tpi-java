@@ -49,4 +49,14 @@ public class Partido {
         return 1;
     }
 
+    public Equipo getEquipoLocal(){
+
+        return this.equipoLocal;
+    }
+
+    public Equipo getEquipoVisitante(){
+
+        return this.equipoVisitante;
+    }
+
 }

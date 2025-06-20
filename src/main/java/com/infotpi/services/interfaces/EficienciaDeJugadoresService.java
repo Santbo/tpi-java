@@ -8,4 +8,6 @@ public interface EficienciaDeJugadoresService {
     
 
     Map<Jugador, Double> mostrar(Map<Jugador, String> jugadores);
+
+    Jugador jugadorMasEficiente(Map<Jugador, Integer> golesDeJugador);
 }

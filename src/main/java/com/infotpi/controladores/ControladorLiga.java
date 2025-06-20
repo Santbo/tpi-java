@@ -12,8 +12,10 @@ import com.infotpi.entidades.Liga;
 import com.infotpi.entidades.Partido;
 import com.infotpi.services.impl.liga.CrearLigaServiceImp;
 import com.infotpi.services.impl.liga.ListarLigaServiceImp;
+import com.infotpi.services.impl.liga.ReporteLigaServiceImp;
 import com.infotpi.services.interfaces.CrearLigaService;
 import com.infotpi.services.interfaces.ListarLigasService;
+import com.infotpi.services.interfaces.ReporteLigaService;
 import com.infotpi.utils.ControlarEntradaDatos;
 import com.infotpi.utils.ControlarOpcionesMenu;
 import com.infotpi.utils.Menu;
@@ -23,6 +25,7 @@ public class ControladorLiga extends Controlador{
     private int opcion;
     private CrearLigaService crearLiga = new CrearLigaServiceImp();
     private ListarLigasService listarLiga = new ListarLigaServiceImp();
+    private ReporteLigaService reporteLiga = new ReporteLigaServiceImp();
     
     public void iniciar(RepositorioDeDatos repositorioDeDatos){
         
@@ -99,8 +102,37 @@ public class ControladorLiga extends Controlador{
                     } else {
                         System.out.println("No hay goles registrados.");
                     }
-
                     
+                    break;
+
+                case 3:
+                    
+
+                    if (repositorioDeDatos.getLiga().isEmpty()){
+
+                        System.out.println("Primero debe crear una liga y jugar un partido en esa liga.");
+                        break;
+                    }
+
+                    System.out.println("Elije la liga para saber el goleador de ésta: ");
+
+                    indice = 0;
+                    for (Liga ligas : listarLiga.listar(repositorioDeDatos)){
+
+                        System.out.printf("[%d] %s\n", indice, ligas.getNombre());
+                        indice++; 
+                    }
+
+                    opcion = ControlarEntradaDatos.controlarEntradaDeDatos(listarLiga.listar(repositorioDeDatos).size());
+
+                    if (listarLiga.listar(repositorioDeDatos).get(opcion).getPartidos().isEmpty()){
+
+                        System.out.println("Primero debe jugar un partido en la liga.");
+                        break;
+                    }
+
+                    reporteLiga.iniciar(listarLiga.listar(repositorioDeDatos).get(opcion));
+
                     break;
 
             }
