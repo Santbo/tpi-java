@@ -10,7 +10,7 @@ import com.infotpi.services.interfaces.ListarEquipoService;
 public class ListarEquipoServiceImp implements ListarEquipoService{
 
     
-
+    @Override
     public List<Equipo> listar(RepositorioDeDatos repositorioDeDatos){
 
         List<Equipo> equipos = new ArrayList<>();

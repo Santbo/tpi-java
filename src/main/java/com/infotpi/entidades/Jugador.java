@@ -53,4 +53,9 @@ public abstract class Jugador {
         return this.golesHistoricos;
     }
 
+    public int getEdad(){
+
+        return this.edad;
+    }
+
 }

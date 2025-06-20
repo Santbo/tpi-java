@@ -9,13 +9,14 @@ import com.infotpi.services.interfaces.SuplentesSinPartidosService;
 
 public class SuplentesSinPartidosServiceImp implements SuplentesSinPartidosService{
     
+    @Override
     public List<Jugador> suplenteSinPartidos(Map<Jugador, String>jugadores){
 
         List<Jugador> suplentesSinPartidos = new ArrayList<>();
         
         jugadores.forEach((jugador, tipo)->{
 
-            if (jugador.getPartidosJugados() == 0 && tipo == "Suplente"){
+            if (jugador.getPartidosJugados() == 0 && tipo.equals("Suplente")){
 
                 suplentesSinPartidos.add(jugador);
 

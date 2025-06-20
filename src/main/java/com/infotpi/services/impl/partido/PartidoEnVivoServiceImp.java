@@ -19,6 +19,7 @@ public class PartidoEnVivoServiceImp implements PartidoEnVivoService{
     private GolAnotadoService anotarGol = new GolAnotadoServiceImp();
     private CrearPartidoService crearPartido = new CrearPartidoServiceImp();
     
+    @Override
     public void iniciar(Map<Jugador, Equipo> jugadoresEnfrentados, Equipo equipoLocal, Equipo equipoVisitante, Liga liga){
 
         int golLocal = 0;

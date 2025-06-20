@@ -11,13 +11,14 @@ import com.infotpi.services.interfaces.TitularConMasPartidosService;
 
 public class TitularConMasPartidoServiceImp implements TitularConMasPartidosService{
     
+    @Override
     public Jugador obtener(Map<Jugador, String> jugadores){
 
         List<Jugador> titulares = new ArrayList<>();
         
         jugadores.forEach((jugador, tipo)->{
 
-            if (tipo == "Titular"){
+            if (tipo.equals("Titular")){
 
                 titulares.add(jugador);
 

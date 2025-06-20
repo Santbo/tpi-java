@@ -10,7 +10,7 @@ import com.infotpi.utils.SeleccionJugadoresPartido;
 
 public class SeleccionarJugadoresPartidoServiceImp implements SeleccionarJugadoresPartidoService{
     
-
+    @Override
     public Map<Jugador, Equipo> seleccionarJugadoresAJugar (Equipo equipoLocal, Equipo equipoVisitante){
 
         Map<Jugador, Equipo> jugadoresSeleccionados = new HashMap<>();

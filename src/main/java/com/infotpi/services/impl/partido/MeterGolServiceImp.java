@@ -7,6 +7,7 @@ import com.infotpi.services.interfaces.MeterGolService;
 
 public class MeterGolServiceImp implements MeterGolService{
 
+    @Override
     public Goles meterGol(Equipo equipo, Jugador jugador){
 
         return new Goles(equipo, jugador);

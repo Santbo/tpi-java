@@ -14,6 +14,7 @@ public class RankingEquiposXGolServiceImp implements RankingEquiposXGolService{
     
     private ListarEquipoService listarEquipos = new ListarEquipoServiceImp();
 
+    @Override
     public List<Equipo> obtenerRankingEquipo(RepositorioDeDatos repositorioDeDatos){
 
         List<Equipo> rankingEquipos = new ArrayList<>(listarEquipos.listar(repositorioDeDatos));

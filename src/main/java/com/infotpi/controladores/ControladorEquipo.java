@@ -3,6 +3,7 @@ package com.infotpi.controladores;
 import java.util.List;
 
 import com.infotpi.services.interfaces.CrearEquipoService;
+import com.infotpi.services.interfaces.ExportarJugadoresEquipoService;
 import com.infotpi.services.interfaces.IncorporarJugadorService;
 import com.infotpi.services.interfaces.ListarEquipoService;
 import com.infotpi.services.interfaces.ListarJugadorService;
@@ -13,6 +14,7 @@ import com.infotpi.data.RepositorioDeDatos;
 import com.infotpi.entidades.Equipo;
 import com.infotpi.entidades.Jugador;
 import com.infotpi.services.impl.equipo.CrearEquipoServiceImp;
+import com.infotpi.services.impl.equipo.ExportarJugadoresEquipoServiceImp;
 import com.infotpi.services.impl.equipo.IncorporarJugadorServiceImp;
 import com.infotpi.services.impl.equipo.ListarEquipoServiceImp;
 import com.infotpi.services.impl.equipo.RankingEquiposXGolServiceImp;
@@ -34,6 +36,7 @@ public class ControladorEquipo extends Controlador{
     private ListarJugadorService listarJugadores = new ListarJugadorServiceImp();
     private TransferirJugadorService transferirJugador = new TransferirJugadorServiceImp();
     private RankingEquiposXGolService rankingEquipos = new RankingEquiposXGolServiceImp();
+    private ExportarJugadoresEquipoService exportarCSV = new ExportarJugadoresEquipoServiceImp();
     
     public  void iniciar(RepositorioDeDatos repositorioDeDatos){
 
@@ -183,9 +186,47 @@ public class ControladorEquipo extends Controlador{
                     if(repositorioDeDatos.getEquipoVacio()){
                         System.out.println("Primero debe crear equipos.");
 
+                        break;
+
                     }
 
                     MostrarRankingEquipo.mostrar(rankingEquipos.obtenerRankingEquipo(repositorioDeDatos));
+
+                    break;
+
+                case 5:
+
+                    if(repositorioDeDatos.getEquipoVacio()){
+
+                        System.out.println("Primero debe crear equipos.");
+
+                        break;
+                    }
+
+                    System.out.println("Elija el equipo de los jugadores que desea exportar: ");
+
+                    indice = 0;
+
+                    for (Equipo equipo : listarEquipo.listar(repositorioDeDatos)){
+
+                        System.out.printf("[%d] %s\n", indice, equipo.getNombre());
+                        indice++; 
+                    }
+
+                    opcionEquipo = ControlarEntradaDatos.controlarEntradaDeDatos(listarEquipo.listar(repositorioDeDatos).size());
+
+                    Equipo equipoAexportar = listarEquipo.listar(repositorioDeDatos).get(opcionEquipo);
+
+                    if (equipoAexportar.getJugadores().isEmpty()){
+
+                        System.out.println("Error, no puede elegir un equipo sin jugadores. Intente nuevamente.");
+                        break;
+                    }
+
+                    exportarCSV.exportarJugadoresEquipoCSV(equipoAexportar.getJugadores(), repositorioDeDatos);
+
+                    break;
+
 
 
             }   

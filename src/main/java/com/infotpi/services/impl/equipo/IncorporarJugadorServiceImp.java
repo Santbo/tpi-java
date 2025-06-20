@@ -6,6 +6,7 @@ import com.infotpi.entidades.Jugador;
 
 public class IncorporarJugadorServiceImp implements IncorporarJugadorService{
     
+    @Override
     public void incorporar(Equipo equipo, Jugador jugador){
 
         equipo.setJugadores(jugador);

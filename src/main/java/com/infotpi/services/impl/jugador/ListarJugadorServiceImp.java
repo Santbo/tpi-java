@@ -43,6 +43,7 @@ public class ListarJugadorServiceImp implements ListarJugadorService{
         
     }
 
+    @Override
     public List<Jugador> listarSinEquipo(RepositorioDeDatos repositorioDeDatos){
 
         List<Jugador> jugadorSinEquipo = new ArrayList<>();
@@ -60,6 +61,7 @@ public class ListarJugadorServiceImp implements ListarJugadorService{
 
     }
 
+    @Override
     public List<Jugador> listarConEquipo(RepositorioDeDatos repositorioDeDatos){
 
         List<Jugador> jugadorConEquipo = new ArrayList<>();

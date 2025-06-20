@@ -1,6 +1,5 @@
 package com.infotpi.utils;
 
-import java.util.List;
 
 import com.infotpi.data.RepositorioDeDatos;
 import com.infotpi.entidades.Equipo;
