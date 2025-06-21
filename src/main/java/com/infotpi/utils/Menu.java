@@ -4,7 +4,7 @@ public class Menu {
     
     static final int OPCIONES_MENU = 4;
     static final int  OPCIONES_JUGADORES= 6;  
-    static final int OPCIONES_EQUIPOS = 5;  
+    static final int OPCIONES_EQUIPOS = 6;  
     static final int OPCION_SALIR = 0;
     static final int OPCIONES_PARTIDO = 2;
     static final int OPCIONES_PARTIDO_EN_VIVO = 3;  
@@ -49,6 +49,7 @@ public class Menu {
         System.out.println("[3] Transferir Jugador");
         System.out.println("[4] Ranking de Equipos por Goles");
         System.out.println("[5] Exportar jugadores de un equipo");
+        System.out.println("[6] Reporte de equipo");
         System.out.println("[0] Volver atras");
         
         

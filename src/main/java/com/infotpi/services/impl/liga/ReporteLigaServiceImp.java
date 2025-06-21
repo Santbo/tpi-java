@@ -59,13 +59,11 @@ public class ReporteLigaServiceImp implements ReporteLigaService {
         System.out.printf("EQUIPO CON MAYOR CANTIDAD DE GOLES: %s CON %d GOLES", equipoConMasGoles.getNombre(),
                                                                                         equipoConMasGoles.getGolesDelEquipo());
 
-
-
-        
-        
-
-        
-
+        try {
+            Thread.sleep(3000); // 2000 milisegundos = 2 segundos
+        } catch (InterruptedException e) {
+            System.out.println("El hilo fue interrumpido");
+        }
         
     }
 
