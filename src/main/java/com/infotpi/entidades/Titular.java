@@ -22,16 +22,6 @@ public class Titular extends Jugador {
         return this.partidosJugados;
     }
 
-    public int getCantidadGoles(){
-
-        return this.cantidadGoles;
-    }
-
-    public void setCantidadGoles(int golesAnotados){
-
-        this.cantidadGoles += golesAnotados;
-    }
-
     public void setPartidosJugados(int partidosJugados){
 
         this.partidosJugados += partidosJugados;

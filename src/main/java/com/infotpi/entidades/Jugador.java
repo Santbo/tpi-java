@@ -4,7 +4,6 @@ public abstract class Jugador {
     
     protected String nombre;
     protected int edad;
-    protected int cantidadGoles;
     protected int partidosJugados;
     protected int golesHistoricos;
     protected Equipo equipo;
@@ -13,7 +12,7 @@ public abstract class Jugador {
 
         this.nombre = nombre;
         this.edad = edad;
-        this.cantidadGoles = 0;
+        this.golesHistoricos = 0;
     }
 
     public abstract void mostrarEstadistica();

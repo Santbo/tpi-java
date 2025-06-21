@@ -35,20 +35,6 @@ public class Partido {
         return this.golesPorJugador;
     }
 
-    public void reporteDeEquipos(){
-
-    }
-
-    public int getEquipoGanador(){
-
-        return 1;
-    }
-
-    public int getEquipoPerdedor(){
-
-        return 1;
-    }
-
     public Equipo getEquipoLocal(){
 
         return this.equipoLocal;

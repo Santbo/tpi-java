@@ -16,20 +16,12 @@ public class Suplente extends Jugador {
         return this.nombre;
     }
 
-    public int getCantidadGoles(){
-
-        return this.cantidadGoles;
-    }
 
     public int getPartidosJugados(){
 
         return this.partidosJugados;
     }
 
-    public void setCantidadGoles(int golesAnotados){
-
-        this.cantidadGoles += golesAnotados;
-    }
 
     public void setPartidosJugados(int partidosJugados){
 
