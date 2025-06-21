@@ -1,13 +1,18 @@
 package com.infotpi;
 
-/**
- * Hello world!
- *
- */
+import com.infotpi.controladores.ControladorGeneral;
+import com.infotpi.data.RepositorioDeDatos;
+import com.infotpi.utils.Menu;
+
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        RepositorioDeDatos repositorioDeDatos = new RepositorioDeDatos();
+        Menu.presentacion();
+
+        ControladorGeneral.iniciar(repositorioDeDatos);
+
     }
 }
