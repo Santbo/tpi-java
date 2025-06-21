@@ -53,10 +53,10 @@ public class ReporteLigaServiceImp implements ReporteLigaService {
         System.out.println("REPORTE DE LIGA");
         System.out.println("===============================");
 
-        System.out.printf("TOTAL GOLES DE LIGA: %d", totalGoles);
-        System.out.printf("JUGADOR MAS EFICIENTE: %s CON %d GOLES", jugadorMasEficiente.getNombre(), 
+        System.out.printf("TOTAL GOLES DE LIGA: %d\n", totalGoles);
+        System.out.printf("JUGADOR MAS EFICIENTE: %s CON %d GOLES\n", jugadorMasEficiente.getNombre(), 
                                                                         jugadorMasEficiente.getGolesHistoricos());
-        System.out.printf("EQUIPO CON MAYOR CANTIDAD DE GOLES: %s CON %d GOLES", equipoConMasGoles.getNombre(),
+        System.out.printf("EQUIPO CON MAYOR CANTIDAD DE GOLES: %s CON %d GOLES\n", equipoConMasGoles.getNombre(),
                                                                                         equipoConMasGoles.getGolesDelEquipo());
 
         try {
